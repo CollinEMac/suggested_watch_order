@@ -1,0 +1,26 @@
+<h1>Listing Relationships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for relationship <- @relationships do %>
+    <tr>
+      <td><%= relationship.type %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.relationship_path(@conn, :show, relationship) %></span>
+        <span><%= link "Edit", to: Routes.relationship_path(@conn, :edit, relationship) %></span>
+        <span><%= link "Delete", to: Routes.relationship_path(@conn, :delete, relationship), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Relationship", to: Routes.relationship_path(@conn, :new) %></span>
