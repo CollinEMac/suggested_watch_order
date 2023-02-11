@@ -4,9 +4,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
-      <th>Release date</th>
-      <th>Poster url</th>
       <th>Type</th>
 
       <th></th>
@@ -16,9 +13,6 @@
 <%= for film <- @films do %>
     <tr>
       <td><%= film.title %></td>
-      <td><%= film.description %></td>
-      <td><%= film.release_date %></td>
-      <td><%= film.poster_url %></td>
       <td><%= film.type %></td>
 
       <td>

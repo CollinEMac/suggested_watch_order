@@ -11,9 +11,6 @@ defmodule SuggestedWatchOrder.MediaFixtures do
     {:ok, film} =
       attrs
       |> Enum.into(%{
-        description: "some description",
-        poster_url: "some poster_url",
-        release_date: "some release_date",
         title: "some title",
         type: "some type"
       })

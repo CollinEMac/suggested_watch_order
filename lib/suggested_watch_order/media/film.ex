@@ -3,9 +3,6 @@ defmodule SuggestedWatchOrder.Media.Film do
   import Ecto.Changeset
 
   schema "films" do
-    field :description, :string
-    field :poster_url, :string
-    field :release_date, :string
     field :title, :string
     field :type, :string
 
@@ -15,7 +12,7 @@ defmodule SuggestedWatchOrder.Media.Film do
   @doc false
   def changeset(film, attrs) do
     film
-    |> cast(attrs, [:title, :description, :release_date, :poster_url, :type])
-    |> validate_required([:title, :description, :release_date, :poster_url, :type])
+    |> cast(attrs, [:title, :type])
+    |> validate_required([:title, :type])
   end
 end

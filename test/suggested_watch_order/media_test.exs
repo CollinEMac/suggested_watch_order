@@ -8,7 +8,7 @@ defmodule SuggestedWatchOrder.MediaTest do
 
     import SuggestedWatchOrder.MediaFixtures
 
-    @invalid_attrs %{description: nil, poster_url: nil, release_date: nil, title: nil, type: nil}
+    @invalid_attrs %{title: nil, type: nil}
 
     test "list_films/0 returns all films" do
       film = film_fixture()
@@ -21,12 +21,9 @@ defmodule SuggestedWatchOrder.MediaTest do
     end
 
     test "create_film/1 with valid data creates a film" do
-      valid_attrs = %{description: "some description", poster_url: "some poster_url", release_date: "some release_date", title: "some title", type: "some type"}
+      valid_attrs = %{title: "some title", type: "some type"}
 
       assert {:ok, %Film{} = film} = Media.create_film(valid_attrs)
-      assert film.description == "some description"
-      assert film.poster_url == "some poster_url"
-      assert film.release_date == "some release_date"
       assert film.title == "some title"
       assert film.type == "some type"
     end
@@ -37,12 +34,9 @@ defmodule SuggestedWatchOrder.MediaTest do
 
     test "update_film/2 with valid data updates the film" do
       film = film_fixture()
-      update_attrs = %{description: "some updated description", poster_url: "some updated poster_url", release_date: "some updated release_date", title: "some updated title", type: "some updated type"}
+      update_attrs = %{title: "some updated title", type: "some updated type"}
 
       assert {:ok, %Film{} = film} = Media.update_film(film, update_attrs)
-      assert film.description == "some updated description"
-      assert film.poster_url == "some updated poster_url"
-      assert film.release_date == "some updated release_date"
       assert film.title == "some updated title"
       assert film.type == "some updated type"
     end

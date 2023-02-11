@@ -9,18 +9,6 @@
   <%= text_input f, :title %>
   <%= error_tag f, :title %>
 
-  <%= label f, :description %>
-  <%= text_input f, :description %>
-  <%= error_tag f, :description %>
-
-  <%= label f, :release_date %>
-  <%= text_input f, :release_date %>
-  <%= error_tag f, :release_date %>
-
-  <%= label f, :poster_url %>
-  <%= text_input f, :poster_url %>
-  <%= error_tag f, :poster_url %>
-
   <%= label f, :type %>
   <%= select f, :type, ["Original Film", "Prequel", "Sequel", "Remake"], prompt: "Select Type" %>
   <%= error_tag f, :type %>
