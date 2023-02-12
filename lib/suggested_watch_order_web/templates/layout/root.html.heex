@@ -14,8 +14,8 @@
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><span><%= link "Home", to: Routes.static_path(@conn, "/") %></span></li>
-            <li>
+            <li class="home-btn"><span><%= link "Home", to: Routes.static_path(@conn, "/") %></span></li>
+            <li class="search-bar">
               <%= form_for @conn, Routes.film_path(@conn, :index), [method: :get], fn f -> %>
                 <%= search_input f, :query %>
                 <%= submit "Search" %>
@@ -28,3 +28,4 @@
     <%= @inner_content %>
   </body>
 </html>
+F
