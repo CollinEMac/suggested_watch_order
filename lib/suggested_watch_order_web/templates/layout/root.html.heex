@@ -15,6 +15,12 @@
         <nav role="navigation">
           <ul>
             <li><span><%= link "Home", to: Routes.static_path(@conn, "/") %></span></li>
+            <li>
+              <%= form_for @conn, Routes.film_path(@conn, :index), [method: :get], fn f -> %>
+                <%= search_input f, :query %>
+                <%= submit "Search" %>
+              <% end %>
+            </li>
           </ul>
         </nav>
       </section>

@@ -4,8 +4,8 @@ defmodule SuggestedWatchOrderWeb.FilmController do
   alias SuggestedWatchOrder.Media
   alias SuggestedWatchOrder.Media.Film
 
-  def index(conn, _params) do
-    films = Media.list_films()
+  def index(conn, params) do
+    films = Media.list_films(params)
     render(conn, "index.html", films: films)
   end
 

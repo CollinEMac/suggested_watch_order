@@ -17,8 +17,14 @@ defmodule SuggestedWatchOrder.Media do
       [%Film{}, ...]
 
   """
-  def list_films do
-    Repo.all(Film)
+  def list_films(params) do
+
+    search_term = get_in(params, ["query"])
+
+    Film
+    |> Film.search(search_term)
+    |> Repo.all()
+    # Repo.all(Film)
   end
 
   @doc """
